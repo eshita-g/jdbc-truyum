@@ -1,5 +1,5 @@
 package com.cognizant.truyum.dao;
-import defaultpackage.*;
+
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.sql.*;

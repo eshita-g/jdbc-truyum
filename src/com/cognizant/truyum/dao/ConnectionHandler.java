@@ -1,4 +1,4 @@
-package defaultpackage;
+package com.cognizant.truyum.dao;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
@@ -14,14 +14,14 @@ public class ConnectionHandler {
 	    try
 	    {
 	    	Properties prop = new Properties();
-	    	prop.load(new FileReader("src/connection.properties"));
+	    	prop.load(new FileReader("C:\\Users\\806869\\Desktop\\New folder\\JDBC_PracticeCheck\\src\\connection.properties"));
 	    	
-	    	String driver =(String)prop.get("driver");
+	    	/*String driver =(String)prop.get("driver");
 	    	String url =(String)prop.get("connection-url");
 	    	String user =(String) prop.get("user");
 	    	String pass =(String) prop.get("password");
-	    	Class.forName(driver);
-	    	con = DriverManager.getConnection(url,user,pass);
+	    	Class.forName(driver);*/
+	    	con = DriverManager.getConnection("jdbc:mysql://localhost:3306/truyum",prop);
 	    	if(con!=null) 
 	    	{
 	    		System.out.println("connected to database");
@@ -29,11 +29,7 @@ public class ConnectionHandler {
 	    	}
 	    	
 	    }
-	    catch(ClassNotFoundException e)
-	    {
-	    	System.out.println("Class in not found for connecting to the driver");
-	    	
-	    } catch (SQLException e) 
+	    catch (SQLException e) 
 	    {
 		
 	    	System.out.println("Not connected to the database");

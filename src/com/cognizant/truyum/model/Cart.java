@@ -23,5 +23,8 @@ public class Cart {
 		this.total = total;
 		this.menuItemList = menuItemList;
 	}
+	public Cart() {
+		// TODO Auto-generated constructor stub
+	}
 
 }

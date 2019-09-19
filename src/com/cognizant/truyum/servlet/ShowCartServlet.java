@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cognizant.truyum.dao.CartDao;
 import com.cognizant.truyum.dao.CartDaoCollectionImpl;
+import com.cognizant.truyum.dao.CartDaoSqlImpl;
 import com.cognizant.truyum.dao.CartEmptyException;
 import com.cognizant.truyum.model.MenuItem;
 
@@ -32,13 +33,13 @@ public class ShowCartServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CartDaoCollectionImpl cartdao = new CartDaoCollectionImpl();
+		CartDaoSqlImpl cartdao = new CartDaoSqlImpl();
 		long userId = 1;
 		ArrayList<MenuItem> cartList = null;
 		try 
 		{
 			cartList = cartdao.getAllCartItems(userId);
-			double totalValue = cartdao.getTotal(userId);
+			double totalValue = cartdao.getTotal();
 			request.setAttribute("total",totalValue);
 			request.setAttribute("x",cartList);
 			RequestDispatcher rd=request.getRequestDispatcher("/cart.jsp");

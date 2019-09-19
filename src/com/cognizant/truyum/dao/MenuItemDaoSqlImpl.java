@@ -1,5 +1,4 @@
 package com.cognizant.truyum.dao;
-import defaultpackage.*;
 import java.sql.Date;
 
 import java.sql.*;
@@ -55,7 +54,7 @@ public class MenuItemDaoSqlImpl implements MenuItemDao {
 	{
 		ArrayList<MenuItem> menuItemListCust = new ArrayList<MenuItem>();
 		Connection con = ConnectionHandler.getConnection();
-		final String Query = "select * from menu_item where me_active='Yes' AND me_date_of_launch < CURDATE()";
+		final String Query = "select * from menu_item where me_active='Yes' AND me_date_of_launch < '2018-12-02'";
 		try {
 			PreparedStatement stmt = con.prepareStatement(Query);
 			ResultSet rs = stmt.executeQuery();

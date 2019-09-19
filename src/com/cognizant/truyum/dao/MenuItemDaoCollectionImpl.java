@@ -34,7 +34,7 @@ public ArrayList<MenuItem> getMenuItemListAdmin() {
 	return menuItemList;
 }
 
-public ArrayList<MenuItem> getMenuItemListCustomer() throws Exception {
+public ArrayList<MenuItem> getMenuItemListCustomer(){
 	
 	ArrayList<MenuItem> fil = new ArrayList<MenuItem>();
 	for(MenuItem x:menuItemList)

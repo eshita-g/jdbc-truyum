@@ -12,8 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cognizant.truyum.dao.MenuItemDao;
 import com.cognizant.truyum.dao.MenuItemDaoCollectionImpl;
+import com.cognizant.truyum.dao.MenuItemDaoSqlImpl;
 import com.cognizant.truyum.model.MenuItem;
-import com.cognizant.truyum.util.Dateutil;
+import com.cognizant.truyum.util.*;
 
 
 @WebServlet("/EditMenuItem")
@@ -35,12 +36,12 @@ public class EditMenuItemServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		Date date=null;
-		MenuItemDao menuItemDao=new MenuItemDaoCollectionImpl();
+		MenuItemDao menuItemDao=new MenuItemDaoSqlImpl();
 		long id =Long.parseLong(request.getParameter("id"));
 		String title=request.getParameter("title");
 	
 		try {
-			date = Dateutil.convertToDate(request.getParameter("dateOfLaunch"));
+			date = DateUtil.convertToDate(request.getParameter("dateOfLaunch"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

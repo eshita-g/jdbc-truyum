@@ -10,9 +10,11 @@ import java.util.ArrayList;
 import com.cognizant.truyum.model.Cart;
 import com.cognizant.truyum.model.MenuItem;
 
-import defaultpackage.ConnectionHandler;
+
 
 public class CartDaoSqlImpl  implements CartDao{
+	
+	//public float total = 0.00f;
 
 	
 	public void addCartItem(long userId, Long menuItemId) 
@@ -77,6 +79,7 @@ public class CartDaoSqlImpl  implements CartDao{
 				menuItemList.add(m1);
 				
 			}
+			//total =  value;
 			cart.setTotal(value);
 			cart.setMenuItemList(menuItemList);
 			
@@ -93,6 +96,14 @@ public class CartDaoSqlImpl  implements CartDao{
 	
 		return menuItemList;
 	}
+	public double getTotal() {
+		
+	  Cart c = new Cart();
+	  return c.getTotal();
+	  
+		
+	}
+	
 	
 	
 	public void removeCartItem(long userId, long menuItemId)

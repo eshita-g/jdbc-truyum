@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="C:/nss/apache-tomcat-7.0.70/apache-tomcat-7.0.70/lib/annotations-api.jar"/>
 	<classpathentry kind="lib" path="C:/nss/apache-tomcat-7.0.70/apache-tomcat-7.0.70/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="C:/nss/apache-tomcat-7.0.70/apache-tomcat-7.0.70/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="C:/nss/mysql-connector-java-5.1.32-bin.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
